@@ -33,6 +33,7 @@ abbr yt "youtube-dl"
 # Path
 # =======
 set PATH $PATH $HOME/.nvm/versions/node/v10.10.0/bin/
+export NODE_OPTIONS="--max-old-space-size=3072" # lg
 set PATH $PATH ~/system/bin
 set PATH $PATH ~/.local/bin
 # set PATH $PATH (ruby -e 'print Gem.user_dir')
@@ -65,6 +66,9 @@ alias dockerstop='docker stop (docker ps -a -q)'
 alias dockerrm='docker rm (docker ps -a -q)'
 alias dockerrmi='docker rmi (docker images -a -q) -f'
 alias dockerrmv="docker volume rm (docker volume ls -qf dangling=true)"
+
+
+eval (direnv hook fish)
 
 # SECRETS / ENV
 # =================================
